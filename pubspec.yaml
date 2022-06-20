@@ -1,0 +1,25 @@
+name: use_case_flutter
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+environment:
+  sdk: ">=2.18.0-190.0.dev <3.0.0"
+
+dependencies:
+  connectivity_plus: ^2.3.4
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  kartal: ^2.3.2
+
+dev_dependencies:
+
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
