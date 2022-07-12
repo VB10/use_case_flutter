@@ -14,9 +14,9 @@ dependencies:
   flutter:
     sdk: flutter
   kartal: ^2.3.2
-
+  vexana: ^2.8.1
+  async: ^2.9.0
 dev_dependencies:
-
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
