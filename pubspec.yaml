@@ -6,7 +6,7 @@ description: A new Flutter project.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 environment:
-  sdk: ">=2.18.0-190.0.dev <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   connectivity_plus: ^2.3.4
@@ -14,12 +14,13 @@ dependencies:
   flutter:
     sdk: flutter
   kartal: ^2.3.2
+  vexana: ^2.8.1
+  async: any
 
 dev_dependencies:
-
-  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
