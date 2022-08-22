@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:use_case_flutter/core/init/main_build.dart';
-import 'package:use_case_flutter/use_case/generic_filter/filter_home_view.dart';
-import 'package:use_case_flutter/use_case/generic_log/generic_home_view.dart';
+import 'package:use_case_flutter/use_case/modular_field/modular_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +10,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Material App',
       builder: MainBuild.build,
-      home: FilterHomeView(),
+      home: ModularView(),
     );
   }
 }

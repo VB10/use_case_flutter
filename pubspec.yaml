@@ -17,6 +17,9 @@ dependencies:
   vexana: ^2.8.1
   async: any
 
+  uikit:
+    path: module/uikit
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
