@@ -1,18 +1,19 @@
 import 'package:vexana/vexana.dart';
 
 class TvShow extends INetworkModel<TvShow> {
+  TvShow({this.score, this.show});
+  factory TvShow.fromJson(Map<String, dynamic> json) {
+    return TvShow(
+      score: json['score'] is double ? json['score'] as double : 1,
+      show: json['show'] != null ? Show.fromJson() : null,
+    );
+  }
   final double? score;
   final Show? show;
 
-  TvShow({this.score, this.show});
-
-  factory TvShow.fromJson(Map<String, dynamic> json) {
-    return TvShow(score: json['score'], show: json['show'] != null ? Show.fromJson(json['show']) : null);
-  }
-
   @override
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final data = <String, dynamic>{};
     data['score'] = score;
     if (show != null) {
       data['show'] = show!.toJson();
@@ -37,6 +38,15 @@ class TvShow extends INetworkModel<TvShow> {
 }
 
 class Show extends INetworkModel<Show> {
+  Show({this.id, this.url, this.name, this.type, this.language, this.status});
+  Show.fromJson() {
+    // id = json['id'];
+    // url = json['url'];
+    // name = json['name'];
+    // type = json['type'];
+    // language = json['language'];
+    // status = json['status'];
+  }
   int? id;
   String? url;
   String? name;
@@ -44,20 +54,9 @@ class Show extends INetworkModel<Show> {
   String? language;
   String? status;
 
-  Show({this.id, this.url, this.name, this.type, this.language, this.status});
-
-  Show.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    url = json['url'];
-    name = json['name'];
-    type = json['type'];
-    language = json['language'];
-    status = json['status'];
-  }
-
   @override
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final data = <String, dynamic>{};
     data['id'] = id;
     data['url'] = url;
     data['name'] = name;
@@ -69,6 +68,6 @@ class Show extends INetworkModel<Show> {
 
   @override
   Show fromJson(Map<String, dynamic> json) {
-    return Show.fromJson(json);
+    return Show.fromJson();
   }
 }

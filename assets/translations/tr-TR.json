@@ -1,0 +1,10 @@
+{
+    "shopTitle": "Sepete ekle",
+    "account": {
+        "recent": "Eski odemeler",
+        "trackDelivery": "Takip alisverisi"
+    },
+    "button": {
+        "cancelOrder": "Siparis iptal"
+    }
+}
