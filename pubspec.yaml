@@ -9,7 +9,6 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  async: any
   connectivity_plus: ^2.3.4
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
@@ -26,6 +25,8 @@ dependencies:
   kartal: ^2.3.2
   mobx: ^2.1.0
   pigeon: ^4.1.0
+  lottie: ^1.4.3
+  async: ^2.9.0
   uikit:
     path: module/uikit
   vexana: ^2.8.1
@@ -48,6 +49,7 @@ flutter:
     - assets/icon/
     - assets/icon/animal/
     - assets/svg/
+    - assets/json/10k.json
 
 flutter_gen:
   output: lib/product/generation/
