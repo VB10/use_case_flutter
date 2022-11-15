@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:use_case_flutter/core/init/main_build.dart';
 import 'package:use_case_flutter/product/generation/colors.gen.dart';
-import 'package:use_case_flutter/use_case/background_pick_check/background_pick_check.dart';
+import 'package:use_case_flutter/use_case/global_management/global_manage_view.dart';
+import 'package:use_case_flutter/use_case/global_management/provider/global_manage_provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+      Provider(
+        create: (context) => GlobalManagerProvider(),
+        child: MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
         errorColor: ColorName.orange,
       ),
-      home: const BackgroundPickCheckView(),
+      home: const GLobalManageView(),
     );
   }
 }
