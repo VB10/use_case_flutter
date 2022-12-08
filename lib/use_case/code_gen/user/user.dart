@@ -18,6 +18,13 @@ class User extends Equatable {
   });
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
+  static List<User> get users => List.generate(
+        10,
+        (index) => User(
+          name: 'users_$index',
+        ),
+      );
+
   final int? id;
   @JsonKey(name: 'naMe')
   final String? name;
