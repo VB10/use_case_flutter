@@ -21,10 +21,18 @@ mixin LoggerMixin<T extends StatefulWidget> on State<T> {
 enum PageSpecialKeys { home, detail }
 
 class CustomModel {
+  CustomModel({this.id, this.description});
+  // TODO: Fixme
+  factory CustomModel.fromJson(String source) => CustomModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  factory CustomModel.fromMap(Map<String, dynamic> map) {
+    return CustomModel(
+      id: map['id'].toString(),
+      description: map['description'].toString(),
+    );
+  }
   final String? id;
   final String? description;
-
-  CustomModel({this.id, this.description});
 
   Map<String, dynamic> toMap() {
     return {
@@ -33,14 +41,5 @@ class CustomModel {
     };
   }
 
-  factory CustomModel.fromMap(Map<String, dynamic> map) {
-    return CustomModel(
-      id: map['id'],
-      description: map['description'],
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory CustomModel.fromJson(String source) => CustomModel.fromMap(json.decode(source));
 }

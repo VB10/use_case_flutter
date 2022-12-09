@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:use_case_flutter/core/init/main_build.dart';
-import 'package:use_case_flutter/use_case/generic_filter/filter_home_view.dart';
-import 'package:use_case_flutter/use_case/generic_log/generic_home_view.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+import 'package:use_case_flutter/core/init/main_build.dart';
+import 'package:use_case_flutter/product/generation/colors.gen.dart';
+import 'package:use_case_flutter/use_case/global_management/provider/global_manage_provider.dart';
+import 'package:use_case_flutter/use_case/special_search/special_search_view.dart';
+
+void main() => runApp(
+      Provider(
+        create: (context) => GlobalManagerProvider(),
+        child: MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Material App',
       builder: MainBuild.build,
-      home: FilterHomeView(),
+      theme: ThemeData.light().copyWith(
+        errorColor: ColorName.orange,
+      ),
+      home: const SpecialSearchView(),
     );
   }
 }
