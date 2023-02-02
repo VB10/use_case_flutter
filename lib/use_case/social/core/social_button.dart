@@ -10,6 +10,7 @@ class SocialButton extends StatelessWidget {
   });
   final SocialAdapter adapter;
   final void Function(String token) onCompleted;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
@@ -20,6 +21,7 @@ class SocialButton extends StatelessWidget {
           // push to login view
           return;
         }
+        // response ?? '';
         onCompleted.call(response2);
       },
       style: ElevatedButton.styleFrom(
@@ -41,7 +43,7 @@ class GlobalException {
       return response;
     } catch (e) {
       //logger
-      print('$e');
+      print('$e $T');
       return null;
     }
   }

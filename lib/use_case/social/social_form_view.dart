@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 import 'package:use_case_flutter/use_case/social/core/social_adapter.dart';
 import 'package:use_case_flutter/use_case/social/core/social_button.dart';
 
@@ -30,6 +31,14 @@ class _SocialViewState extends State<SocialView> {
             SocialButton(
               adapter: FacebookAdapter(),
               onCompleted: print,
+            ),
+            SocialButton(
+              adapter: MicrosoftAdapter(),
+              onCompleted: (token) {
+                if (token.isNullOrEmpty) {
+                  // call your backend
+                }
+              },
             ),
           ],
         ),

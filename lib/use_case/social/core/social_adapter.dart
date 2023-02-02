@@ -30,6 +30,12 @@ class SocialAdapterModel {
         icon: Icons.facebook,
       );
 
+  factory SocialAdapterModel.microsoft() => SocialAdapterModel(
+        title: 'Microsoft',
+        color: Colors.black,
+        icon: Icons.wordpress,
+      );
+
   final String title;
   final Color color;
   final IconData icon;
@@ -63,4 +69,15 @@ class AppleAdapter implements SocialAdapter {
 
   @override
   final SocialAdapterModel model = SocialAdapterModel.apple();
+}
+
+class MicrosoftAdapter implements SocialAdapter {
+  @override
+  Future<String?> make() async {
+    // MARK: todo microsoft login bussines
+    return toString();
+  }
+
+  @override
+  final SocialAdapterModel model = SocialAdapterModel.microsoft();
 }
