@@ -52,6 +52,8 @@ enum NetworkResult {
         return NetworkResult.off;
       case ConnectivityResult.vpn:
         return NetworkResult.off;
+      case ConnectivityResult.other:
+        return NetworkResult.on;
     }
   }
 }
