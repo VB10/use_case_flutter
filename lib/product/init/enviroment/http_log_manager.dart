@@ -31,6 +31,7 @@ class HttpLogManager {
     }
   }
 
+  // It will show chucker screen when enabled
   static void show() {
     if (ChuckerFlutter.showOnRelease) {
       ChuckerFlutter.showChuckerScreen();
