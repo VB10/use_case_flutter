@@ -1,14 +1,14 @@
 import 'package:async/async.dart';
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:use_case_flutter/use_case/cancalable_auto_complete/model/durations.dart';
 import 'package:use_case_flutter/use_case/cancalable_auto_complete/model/errors.dart';
 import 'package:use_case_flutter/use_case/cancalable_auto_complete/model/tv_show.dart';
 import 'package:use_case_flutter/use_case/cancalable_auto_complete/service/tv_service.dart';
 import 'package:vexana/vexana.dart';
 
-import 'model/durations.dart';
-
 class AutoCancelableView extends StatefulWidget {
-  const AutoCancelableView({Key? key}) : super(key: key);
+  const AutoCancelableView({super.key});
   @override
   State<AutoCancelableView> createState() => _AutoCancelableViewState();
 }
@@ -17,8 +17,12 @@ class _AutoCancelableViewState extends State<AutoCancelableView> with _AutoCance
   @override
   void initState() {
     super.initState();
-    tvService =
-        TvService(NetworkManager(options: BaseOptions(baseUrl: 'https://api.tvmaze.com'), isEnableLogger: true));
+    final manager =
+        NetworkManager<EmptyModel>(options: BaseOptions(baseUrl: 'https://api.tvmaze.com'), isEnableLogger: true);
+    manager.interceptors.add(ChuckerDioInterceptor());
+    tvService = TvService(
+      manager,
+    );
   }
 
   @override
@@ -42,7 +46,7 @@ mixin _AutoCancel on State<AutoCancelableView> {
   late final ITvService tvService;
 
   Future<List<TvShow>> search(String key) async {
-    _cancelableOperation?.cancel();
+    await _cancelableOperation?.cancel();
     _cancelableOperation = CancelableOperation.fromFuture(
       Future.delayed(Durations.normal.value),
       onCancel: () {
@@ -50,7 +54,7 @@ mixin _AutoCancel on State<AutoCancelableView> {
       },
     );
 
-    List<TvShow> items = [];
+    var items = <TvShow>[];
     await _cancelableOperation?.value.then((result) async {
       items = await tvService.fetchItems(key) ?? [];
     });

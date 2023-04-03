@@ -5,8 +5,8 @@ import 'package:vexana/vexana.dart';
 void main() {
   late ITvService tvService;
   setUp(() {
-    tvService =
-        TvService(NetworkManager(options: BaseOptions(baseUrl: 'https://api.tvmaze.com'), isEnableLogger: true));
+    tvService = TvService(
+        NetworkManager<EmptyModel>(options: BaseOptions(baseUrl: 'https://api.tvmaze.com'), isEnableLogger: true));
   });
   test('Fetch kids shows', () async {
     final response = await tvService.fetchItems('kids');
