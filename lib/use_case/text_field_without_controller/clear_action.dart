@@ -15,7 +15,6 @@ class ClearTextAction extends Action<ClearTextIntent> {
 }
 
 class ClearTextIntent extends Intent {
-  final String? text;
-
   const ClearTextIntent({this.text});
+  final String? text;
 }
