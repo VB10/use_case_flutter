@@ -1,20 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:use_case_flutter/use_case/text_field_without_controller/clear_action.dart';
 
-mixin LoginController on State<LoginView> {
-  final TextEditingController _controller = TextEditingController();
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
-
-  void updateController(List args) {}
-}
-
 class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+  const LoginView({super.key});
   @override
   State<LoginView> createState() => _LoginViewState();
 }
@@ -33,49 +21,47 @@ class _LoginViewState extends State<LoginView> with LoginController {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _homeButton(),
-            _removeButton(),
-          ],
-        ),
-        appBar: AppBar(),
-        body: _CustomTextField(
-          action: textAction,
-          onChange: (String value) {
-            _value = value;
-          },
-        ));
+      floatingActionButton: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          _homeButton(),
+          _removeButton(),
+        ],
+      ),
+      appBar: AppBar(),
+      body: _CustomTextField(
+        action: textAction,
+        onChange: (String value) {
+          _value = value;
+        },
+      ),
+    );
   }
 
   FloatingActionButton _homeButton() {
     return FloatingActionButton.large(
       child: const Icon(Icons.home),
       onPressed: () {
-        _controllerCleaner.update('home');
+        _controllerCleaner.update('vb');
       },
     );
   }
 
   FloatingActionButton _removeButton() {
     return FloatingActionButton(
+      onPressed: _controllerCleaner.clear,
       child: const Icon(Icons.remove),
-      onPressed: () {
-        _controllerCleaner.clear();
-      },
     );
   }
 }
 
 class _CustomTextField extends StatelessWidget {
   _CustomTextField({
-    Key? key,
     required this.action,
     required this.onChange,
-  }) : super(key: key);
+  });
 
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   final ClearTextAction action;
   final void Function(String value) onChange;
   @override
@@ -85,15 +71,15 @@ class _CustomTextField extends StatelessWidget {
       listener: (action) {
         if (action is ClearTextAction) {
           if (action.text.isEmpty) {
-            controller.clear();
+            _controller.clear();
           } else {
-            controller.text = action.text;
+            _controller.text = action.text;
           }
         }
       },
       child: TextField(
         onChanged: onChange,
-        controller: controller,
+        controller: _controller,
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
         ),
@@ -103,9 +89,8 @@ class _CustomTextField extends StatelessWidget {
 }
 
 class ControllerCleaner {
-  final ClearTextAction _clearTextAction;
-
   ControllerCleaner(ClearTextAction clearTextAction) : _clearTextAction = clearTextAction;
+  final ClearTextAction _clearTextAction;
 
   void clear() {
     _clearTextAction.invoke(const ClearTextIntent());
@@ -115,3 +100,38 @@ class ControllerCleaner {
     _clearTextAction.invoke(ClearTextIntent(text: title));
   }
 }
+
+mixin LoginController on State<LoginView> {
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
+
+  void updateController(List args) {}
+}
+
+// class XS extends StatelessWidget {
+//   const XS({super.key});
+//   final textController = TextEditingController();
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+//         TextField(
+//           controller: textController,
+//         ),
+//         ElevatedButton(
+//           onPressed: () {
+//             textController.clear();
+//             textController.text = "";
+//             textController.dispose();
+//           },
+//           child: const Text('Clear'),
+//         ),
+//       ],
+//     );
+//   }
+// }

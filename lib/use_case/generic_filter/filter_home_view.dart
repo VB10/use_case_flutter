@@ -17,6 +17,7 @@ class _FilterHomeViewState extends State<FilterHomeView> {
   String _name = '';
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: Text(_name)),
       floatingActionButton: FloatingActionButton(

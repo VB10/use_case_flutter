@@ -40,6 +40,9 @@ dependencies:
   chucker_flutter: ^1.4.3
   shake: ^2.2.0
 
+  codegen:
+    path: module/codegen
+
 dev_dependencies:
   build_runner: ^2.2.1
   flutter_gen_runner: ^5.2.0

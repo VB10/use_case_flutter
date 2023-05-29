@@ -7,6 +7,6 @@ PlatformShow get createAdapter => TextShowAccepted();
 class TextShowAccepted extends PlatformShow {
   @override
   String platformName() {
-    return '${HttpStatus.accepted}';
+    return '${HttpStatus.accepted} MOBILE';
   }
 }

@@ -7,6 +7,6 @@ PlatformShow get createAdapter => TextShowAcceptedWeb();
 class TextShowAcceptedWeb implements PlatformShow {
   @override
   String platformName() {
-    return '${HttpStatus.accepted} ${document.body?.innerHtml}';
+    return '${HttpStatus.accepted} WEB ${document.body?.innerHtml}';
   }
 }
