@@ -50,6 +50,9 @@ enum NetworkResult {
         return NetworkResult.on;
       case ConnectivityResult.none:
         return NetworkResult.off;
+      case ConnectivityResult.vpn:
+      case ConnectivityResult.other:
+        return NetworkResult.off;
     }
   }
 }

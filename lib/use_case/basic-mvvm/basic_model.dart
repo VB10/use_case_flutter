@@ -25,3 +25,16 @@ class BasicModel {
     );
   }
 }
+
+class BasicModelDAO {
+  final BasicModel model;
+
+  BasicModelDAO({
+    required this.model,
+  });
+
+  //
+  List<String> getUserNames() {
+    return [model.userName];
+  }
+}

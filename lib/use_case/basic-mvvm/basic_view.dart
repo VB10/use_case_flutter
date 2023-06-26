@@ -27,6 +27,48 @@ class _BasicViewState extends State<BasicView> with BasicViewMixin {
     return Scaffold(
       body: Column(
         children: [
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Text('Go to Result Page'),
+          ),
           _BasicInputField(userNameController, onControllerChange),
           _SaveButton(
             isValidForTextController: isValidForTextController,
