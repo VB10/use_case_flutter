@@ -59,7 +59,6 @@ flutter:
   assets:
     - assets/translations/
     - assets/icon/
-    - assets/icon/animal/
     - assets/svg/
     - assets/json/10k.json
 
