@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:use_case_flutter/use_case/startegy_pattern/core/strategy_context.dart';
+import 'package:use_case_flutter/use_case/strategy_pattern/core/strategy_context.dart';
 
 @immutable
 class StrategyApprove with Operation {
@@ -23,16 +22,20 @@ class StrategyApproveDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      child: Column(
-        children: [
-          const Text('------ Random Approive ---'),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop(StrategyResult.success);
-            },
-            child: const Icon(Icons.check),
-          )
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('------ Random Approive ---'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop(StrategyResult.success);
+              },
+              child: const Icon(Icons.check),
+            ),
+          ],
+        ),
       ),
     );
   }

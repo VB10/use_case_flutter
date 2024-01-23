@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:use_case_flutter/use_case/startegy_pattern/core/strategy_context.dart';
+import 'package:use_case_flutter/use_case/strategy_pattern/core/strategy_context.dart';
 
 @immutable
 class StrategyLicense with Operation {
@@ -26,6 +25,7 @@ class StrategyLicenseView extends StatefulWidget {
 
 class _StrategyLicenseViewState extends State<StrategyLicenseView> {
   bool _isCheck = false;
+
   void _updateCheck(bool? value) {
     if (value == null) return;
     if (_isCheck == value) return;
@@ -53,7 +53,7 @@ class _StrategyLicenseViewState extends State<StrategyLicenseView> {
                     Navigator.of(context).pop(StrategyResult.success);
                   },
             child: const Icon(Icons.check),
-          )
+          ),
         ],
       ),
     );
