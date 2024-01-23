@@ -5,7 +5,7 @@ import 'package:use_case_flutter/core/init/main_build.dart';
 import 'package:use_case_flutter/product/init/enviroment/http_log_manager.dart';
 import 'package:use_case_flutter/use_case/complex_form/complex_form_view.dart';
 import 'package:use_case_flutter/use_case/global_management/provider/global_manage_provider.dart';
-import 'package:use_case_flutter/use_case/startegy_pattern/strategy_home_view.dart';
+import 'package:use_case_flutter/use_case/strategy_pattern/strategy_home_view.dart';
 
 void main() => runApp(
       Provider(

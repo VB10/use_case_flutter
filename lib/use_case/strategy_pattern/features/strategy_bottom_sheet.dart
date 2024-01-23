@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:use_case_flutter/use_case/startegy_pattern/core/strategy_context.dart';
+import 'package:use_case_flutter/use_case/strategy_pattern/core/strategy_context.dart';
 
 @immutable
 class StrategyBottom with Operation {
@@ -26,14 +26,16 @@ class StrategyBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (result == StrategyResult.failure) {
-      return const Text('Has a problem!!');
+      return const Material(child: Center(child: Text('Has a problem!!')));
     }
 
     return const Material(
-      child: Icon(
-        Icons.check,
-        color: Colors.green,
-        size: 50,
+      child: Center(
+        child: Icon(
+          Icons.check,
+          color: Colors.green,
+          size: 50,
+        ),
       ),
     );
   }

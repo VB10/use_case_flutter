@@ -34,7 +34,7 @@ class _AutoCancelableViewState extends State<AutoCancelableView> with _AutoCance
           return option.show?.name ?? '';
         },
         optionsBuilder: (textEditingValue) async {
-          return await search(textEditingValue.text);
+          return  search(textEditingValue.text);
         },
       ),
     );
@@ -48,7 +48,7 @@ mixin _AutoCancel on State<AutoCancelableView> {
   Future<List<TvShow>> search(String key) async {
     await _cancelableOperation?.cancel();
     _cancelableOperation = CancelableOperation.fromFuture(
-      Future.delayed(Durations.normal.value),
+      Future.delayed(Duration(seconds: 1)),
       onCancel: () {
         ErrorsMixin.print('Operation is canceled');
       },
