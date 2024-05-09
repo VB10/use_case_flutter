@@ -14,9 +14,10 @@ class SheetFormField extends FormField<bool> {
                 Expanded(
                   child: TextButton(
                     onPressed: () async {
+                      if (state.isValid) return;
+
                       final response =
                           await CustomFormSheet.show(state.context);
-                      if (state.isValid) return;
                       state.didChange(response ?? false);
                     },
                     child: const Text(

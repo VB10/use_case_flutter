@@ -22,16 +22,19 @@ class _CustomFromViewState extends State<CustomFromView>
       body: Form(
         key: customFormKey,
         onChanged: onFormChange,
-        child: Column(
-          children: [
-            const _FirstNameController(),
-            const _LastNameController(),
-            SheetFormField(),
-            CheckBoxFormField(
-              title: CustomFormKeys.agree,
-            ),
-            _SubmitButton(formValidateNotifier: formValidateNotifier),
-          ],
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Column(
+            children: [
+              const _FirstNameController(),
+              const _LastNameController(),
+              SheetFormField(),
+              CheckBoxFormField(
+                title: CustomFormKeys.agree,
+              ),
+              _SubmitButton(formValidateNotifier: formValidateNotifier),
+            ],
+          ),
         ),
       ),
     );
