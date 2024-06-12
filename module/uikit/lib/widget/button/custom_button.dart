@@ -35,11 +35,12 @@ class CustomGradientButton extends StatelessWidget {
         child: SizedBox(
           height: size.value,
           child: DecoratedBox(
-              decoration: ButtonDecoration(colorScheme ?? Theme.of(context).colorScheme),
+              decoration: ButtonDecoration(
+                  colorScheme ?? Theme.of(context).colorScheme),
               child: Center(
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.headline5?.copyWith(
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: Theme.of(context).colorScheme.onError,
                       ),
                 ),
