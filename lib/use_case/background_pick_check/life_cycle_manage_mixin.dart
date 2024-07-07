@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-mixin LifeCyleUse<T extends StatefulWidget> on WidgetsBindingObserver, State<T> {
+mixin LifeCyleUse<T extends StatefulWidget>
+    on WidgetsBindingObserver, State<T> {
   void onResume();
   @override
   void initState() {
@@ -40,6 +41,7 @@ class LifecycleEventHandler extends WidgetsBindingObserver {
       case AppLifecycleState.inactive:
       case AppLifecycleState.paused:
       case AppLifecycleState.detached:
+      case AppLifecycleState.hidden:
         await suspendingCallBack();
         break;
     }
