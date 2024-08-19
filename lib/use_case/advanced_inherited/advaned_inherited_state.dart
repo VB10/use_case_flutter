@@ -3,8 +3,7 @@ import 'package:use_case_flutter/use_case/advanced_inherited/advanced_form_inher
 import 'package:use_case_flutter/use_case/advanced_inherited/advanced_inherited.dart';
 import 'package:use_case_flutter/use_case/advanced_inherited/model/advanced_inherited_model.dart';
 
-/// Cloud
-class AdvancedInheritedProvider extends StatefulWidget {
+final class AdvancedInheritedProvider extends StatefulWidget {
   const AdvancedInheritedProvider({super.key, this.user});
   final EmptySampleInheritedUser? user;
 
