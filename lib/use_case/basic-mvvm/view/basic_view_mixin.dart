@@ -21,7 +21,7 @@ mixin BasicViewMixin on State<BasicView> {
   Future<void> controlToResult({bool result = false}) async {
     if (result) {
       // if backend return result, we will redirct to home page for user
-      await context.navigateToPage<void>(const HomeExampleView());
+      await context.route.navigateToPage<void>(const HomeExampleView());
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

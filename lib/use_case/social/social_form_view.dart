@@ -35,7 +35,7 @@ class _SocialViewState extends State<SocialView> {
             SocialButton(
               adapter: MicrosoftAdapter(),
               onCompleted: (token) {
-                if (token.isNullOrEmpty) {
+                if (token.ext.isNullOrEmpty) {
                   // call your backend
                 }
               },

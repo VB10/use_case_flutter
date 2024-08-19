@@ -56,11 +56,10 @@ class _SpecialSearchViewState extends State<SpecialSearchView> {
             userNotifierList: _userNotifierList,
           ),
           _ValueUserList(userNotifierList: _userNotifierList),
-          context.emptySizedHeightBoxHigh.toSliver,
           Text(
             _listOneTitle,
-            style: context.textTheme.bodyLarge,
-          ).toVisible(_searchedReplies.isNotEmpty).toSliver,
+            style: context.general.textTheme.bodyLarge,
+          ).ext.toVisible(value: _searchedReplies.isNotEmpty).toSliver,
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
@@ -92,8 +91,8 @@ class _ValueUserTitle extends StatelessWidget {
       builder: (BuildContext context, List<User> value, Widget? child) {
         return Text(
           _listSecondTitle,
-          style: context.textTheme.displaySmall,
-        ).toVisible(value.isNotEmpty).toSliver;
+          style: context.general.textTheme.displaySmall,
+        ).ext.toVisible(value: value.isNotEmpty).toSliver;
       },
     );
   }

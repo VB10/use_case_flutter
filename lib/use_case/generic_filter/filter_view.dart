@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-
-import 'mixin/show_sheet_mixin.dart';
-import 'model/color_model.dart';
+import 'package:use_case_flutter/use_case/generic_filter/mixin/show_sheet_mixin.dart';
 
 abstract class IFilter {
   String get key;
@@ -11,10 +9,9 @@ abstract class IFilter {
 
 class FilterView<T extends IFilter> extends StatefulWidget {
   const FilterView({
-    Key? key,
     required List<T> values,
-  })  : _values = values,
-        super(key: key);
+    super.key,
+  }) : _values = values;
 
   final List<T> _values;
 
@@ -36,8 +33,10 @@ class _FilterViewState<T> extends State<FilterView> {
   void _findItems(String value) {
     setState(() {
       filteredItems = _countries
-          .where((element) =>
-              element.key.toLowerCase().contains(value.toLowerCase()))
+          .where(
+            (element) =>
+                element.key.toLowerCase().contains(value.toLowerCase()),
+          )
           .toList();
     });
   }
@@ -53,7 +52,7 @@ class _FilterViewState<T> extends State<FilterView> {
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
                 onTap: () {
-                  context.pop(filteredItems[index]);
+                  context.route.pop(filteredItems[index]);
                 },
                 title: Text(filteredItems[index].key),
                 leading: const Icon(Icons.circle_outlined),
@@ -67,9 +66,13 @@ class _FilterViewState<T> extends State<FilterView> {
 }
 
 extension FilterViewExtension on FilterView {
-  Future<T?> showSheet<T extends IFilter>(
-      {required BuildContext context, required List<T> items}) {
+  Future<T?> showSheet<T extends IFilter>({
+    required BuildContext context,
+    required List<T> items,
+  }) {
     return ShowSheetMixin.showCustomSheet<T>(
-        context: context, child: FilterView<T>(values: items));
+      context: context,
+      child: FilterView<T>(values: items),
+    );
   }
 }
