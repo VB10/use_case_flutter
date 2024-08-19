@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:use_case_flutter/use_case/generic_filter/filter_view.dart';
 
 mixin ShowSheetMixin {
-  static Future<T?> showCustomSheet<T>(
-      {required BuildContext context, required Widget child}) {
+  static Future<T?> showCustomSheet<T>({
+    required BuildContext context,
+    required Widget child,
+  }) {
     return showModalBottomSheet<T>(
       context: context,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: context.normalRadius)),
+      shape: const RoundedRectangleBorder(),
       builder: (context) {
         return Column(
           children: [
@@ -23,8 +23,8 @@ mixin ShowSheetMixin {
 
 class _Header extends StatelessWidget {
   const _Header({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +32,16 @@ class _Header extends StatelessWidget {
       children: [
         const Spacer(flex: 2),
         SizedBox(
-            width: context.dynamicWidth(0.3),
-            child: const Divider(thickness: 10)),
+          width: context.sized.dynamicWidth(0.3),
+          child: const Divider(thickness: 10),
+        ),
         const Spacer(),
         IconButton(
-            onPressed: () {
-              context.pop();
-            },
-            icon: const Icon(Icons.close))
+          onPressed: () {
+            context.route.pop();
+          },
+          icon: const Icon(Icons.close),
+        ),
       ],
     );
   }
