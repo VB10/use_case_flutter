@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CheckBoxFormField extends FormField<bool> {
   CheckBoxFormField({
     required String title,
+    ValueChanged<bool>? onChanged,
     super.key,
   }) : super(
           initialValue: false,
@@ -15,7 +16,10 @@ class CheckBoxFormField extends FormField<bool> {
                   child: CheckboxListTile(
                     title: Text(title),
                     value: state.value ?? false,
-                    onChanged: state.didChange,
+                    onChanged: (value) {
+                      state.didChange(value);
+                      onChanged?.call(value ?? false);
+                    },
                   ),
                 ),
               ],
