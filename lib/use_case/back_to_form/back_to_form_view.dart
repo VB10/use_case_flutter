@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:use_case_flutter/use_case/back_to_form/general_form.dart';
 import 'package:use_case_flutter/use_case/back_to_form/mixin/back_to_form_mixin.dart';
 import 'package:use_case_flutter/use_case/back_to_form/model/back_to_form_state.dart';
 import 'package:use_case_flutter/use_case/custom_form_field/widget/form_field/check_box_form_field.dart';
@@ -21,14 +22,10 @@ class _BackToFormViewState extends State<BackToFormView> with BackToFormMixin {
       body: ValueListenableBuilder<BackToFormState>(
         valueListenable: formStateNotifier,
         builder: (context, value, child) {
-          return Form(
-            key: formKey,
+          return GeneralForm(
+            formKey: formKey,
             canPop: value.isFormEmpty,
-            onChanged: onFormChangeListen,
-            onPopInvokedWithResult: (didPop, result) => onPopInvokedWithResult(
-              didPop: didPop,
-              result: result,
-            ),
+            onChange: onFormChangeListen,
             child: Padding(
               padding: _BackToFormItems.pagePadding,
               child: Column(
