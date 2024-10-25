@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:use_case_flutter/core/init/main_build.dart';
 import 'package:use_case_flutter/product/init/enviroment/http_log_manager.dart';
-import 'package:use_case_flutter/use_case/back_to_form/widget/back_to_form_home.dart';
 import 'package:use_case_flutter/use_case/complex_form/complex_form_view.dart';
 import 'package:use_case_flutter/use_case/global_management/provider/global_manage_provider.dart';
+import 'package:use_case_flutter/use_case/loading_dialog/custom_loading_dialog_view.dart';
 
 void main() => runApp(
       Provider(
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
           //   brightness: Brightness.light,
           // ),
           ),
-      home: const BackToFormHome(),
+      home: const CustomLoadingDialogView(),
       navigatorObservers: [ChuckerFlutter.navigatorObserver],
     );
     return GestureDetector(
