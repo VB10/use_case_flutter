@@ -2,12 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "lldb",
+      "type": "dart",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/vb10/Desktop/development/use_case_flutter/linux",
-      "program": "/Users/vb10/Desktop/development/use_case_flutter/linux/build/Debug/outDebug"
+      "program": "lib/main.dart"
     }
   ]
 }
