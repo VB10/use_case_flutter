@@ -3,6 +3,9 @@
 
 Bu liste, Flutter projelerinde karşılaşabileceğiniz çeşitli durumlar için çözüm önerileri ve kod örnekleri içeren videolardan oluşmaktadır.
 
+
+>  [Tüm seriyi buradan izleyebilirsiniz](https://www.youtube.com/playlist?list=PL1k5oWAuBhgVAojyfTTwWKi42khBra9Y4)  
+
 ## Videolar
 
 1. **Flutter Loading Dialog - Generic, Extension ile Gelişmiş Yapı**  
