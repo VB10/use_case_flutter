@@ -82,22 +82,22 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
-  app_settings: d103828c9f5d515c4df9ee754dabd443f7cedcf3
-  connectivity_plus: 413a8857dd5d9f1c399a39130850d02fe0feaf7e
-  device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
+  app_settings: dec48968acca6472cfb9f487d8a366afffd3d1a1
+  connectivity_plus: 8443422d4c5a53dee0d50779ec5dbcda1071251e
+  device_info_plus: 335f3ce08d2e174b9fdc3db3db0f4e3b1f66bd89
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
-  package_info_plus: 115f4ad11e0698c8c1c5d8a689390df880f47e85
-  path_provider_foundation: eaf5b3e458fc0e5fbb9940fb09980e853fe058b8
-  permission_handler_apple: 8f116445eff3c0e7c65ad60f5fef5490aa94b4e4
+  image_picker_ios: afb77645f1e1060a27edb6793996ff9b42256909
+  package_info_plus: 566e1b7a2f3900e4b0020914ad3fc051dcc95596
+  path_provider_foundation: 0f28622a447f952060798e710afcae6800d1dfa0
+  permission_handler_apple: 67471be8e7d2fd175420743893973ac0d98c9511
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  sensors_plus: 5717760720f7e6acd96fdbd75b7428f5ad755ec2
-  share_plus: 599aa54e4ea31d4b4c0e9c911bcc26c55e791028
-  shared_preferences_foundation: e2dae3258e06f44cc55f49d42024fd8dd03c590c
-  sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
-  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
+  sensors_plus: 809f7e76b18439344b148b2730634b59d645f7eb
+  share_plus: 35c6613d1452d4134cfdb14865ac23bff7e7f3c1
+  shared_preferences_foundation: 84ce365ee5ce19a94de8ece53db7142d35141a5b
+  sqflite: 5b24d06a453c198c13b305ceea4b4286cc07cfe4
+  url_launcher_ios: b7f13d9491e07f5230bf3e056ab68678f896980a
 
 PODFILE CHECKSUM: 4387b88d4dfddf360388490fa92ca628d37f317c
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
