@@ -48,7 +48,7 @@ class UserFAdapter extends TypeAdapter<_$_UserF> {
 // **************************************************************************
 
 _$_UserF _$$_UserFFromJson(Map<String, dynamic> json) => _$_UserF(
-      json['statusCode'] as int?,
+      (json['statusCode'] as num?)?.toInt(),
       json['id'] as String?,
     );
 
