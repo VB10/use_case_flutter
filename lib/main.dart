@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:use_case_flutter/core/init/main_build.dart';
 import 'package:use_case_flutter/product/init/enviroment/http_log_manager.dart';
-import 'package:use_case_flutter/use_case/basic_usage/basic_home_view.dart';
+import 'package:use_case_flutter/use_case/boxes/advance_box_view.dart';
 import 'package:use_case_flutter/use_case/complex_form/complex_form_view.dart';
 import 'package:use_case_flutter/use_case/global_management/provider/global_manage_provider.dart';
 
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
           //   brightness: Brightness.light,
           // ),
           ),
-      home: const BasicHomeView(),
+      home: const AdvanceBoxView(),
       navigatorObservers: [ChuckerFlutter.navigatorObserver],
     );
     return GestureDetector(
