@@ -15,19 +15,18 @@ class NetworkChangeManager extends INetworkChangeManager {
     _connectivity = Connectivity();
   }
   late final Connectivity _connectivity;
-  StreamSubscription<ConnectivityResult>? _subscription;
+  StreamSubscription<List<ConnectivityResult>>? _subscription;
 
   @override
   Future<NetworkResult> checkNetworkFirstTime() async {
     final connectivityResult = await _connectivity.checkConnectivity();
-    return NetworkResult.checkConnectivityResult(connectivityResult);
+    return NetworkResult.checkConnectivityResult(connectivityResult.first);
   }
 
   @override
   void handleNetworkChange(NetworkCallBack onChange) {
     _subscription = _connectivity.onConnectivityChanged.listen((event) {
-      print(event);
-      onChange.call(NetworkResult.checkConnectivityResult(event));
+      onChange.call(NetworkResult.checkConnectivityResult(event.first));
     });
   }
 
